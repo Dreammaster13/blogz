@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    {% if blogs|length == 0 %}
+    <p>No posts yet</p>
+    {% else %}
+
+        <ul>
+            {% for blog in blogs %}
+            <li>{{ blog.title }}</li>
+                <form action='posted_blog' method='POST'>
+                <input type='hidden' name='blog-id' value="{{blog.id}}">
+                <input type='submit' value='Submit blog post'>
+                </form>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+
+{% endblock %}
