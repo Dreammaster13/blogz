@@ -1,8 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Post a Blog!</h1>
-<h2>{{blog.title}}</h2>
-    <p>{{blog.body}}</p></li>
+<h1>Blog Posts</h1>
+<hr>
+{% for post in posts %}
+<div class="post">
+    <a href="/blog?id={{post.id}}"><p><h2>{{post.title}}</h2></p></a>
+    <p class="body-text">{{post.body}}</p>
+    <p class="posted-date">Posted on: {{post.posted_date}}</p>
+    <p class="user">Posted by: <a href="/blog?userid={{post.owner_id}}">{{post.owner.username}}</a></p>
+</div>
+{% endfor %}
+    
 
 {% endblock %}

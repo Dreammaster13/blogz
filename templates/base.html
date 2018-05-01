@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <nav> 
-        <a href="/">Main Blog Page</a>     
-        <a href="/newpost">Add a Blog Entry</a>
-        </nav>
-
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css')}}">
         <title>{{title}}</title> 
     </head>
     <body>
-        
+        <div class="container">
 
-        {% block content %}
-        {% endblock %}
-
+            <nav class="header">
+      
+              <h1 class="title"><a href="/">Blogz!</a></h1>
+              <a href="/blog">View All Posts</a>
+              <a href="/newpost">New Post</a>
+              <a href="/logout">Logout</a>
+              <a href="/login">Login</a>
+      
+            </nav>
+            {% block content %}
+            {% endblock %}
+          </div>
     </body>
 </html>

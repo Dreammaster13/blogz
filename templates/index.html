@@ -1,18 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-    <h1>Build a Blog</h1>
-
-    <ul>
-        {% for blog in posted_blogs %}
-        <li>
-            <h1 style='text-decoration: underline'>
-                <a href="/blog?id={{ blog.id }}">{{ blog.title }}</a>
-                </h1>
-            <p>{{ blog.body }}</p>
-        </li>
+     
+    <div class="index">
+        <h1>Visitors</h1>
+        <hr>
+        {% for user in users %}
+        
+            <p class="users"><a href="/blog?userid={{ user.id }}">{{ user.username }}</a></p>
+            
         {% endfor %}
-    </ul>
+    </div>
 
 {% endblock %}
